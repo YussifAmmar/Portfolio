@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yussif H. Ammar | Portfolio</title>
+    <link rel="icon" href="YA.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#e2e8f0',
+                        accent: '#8b5cf6',
+                        dark: '#0f172a',
+                        darker: '#020617',
+                    }
+                }
+            }
+        }
+
+
+
+
+    </script>
+    <script>
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            const content = modal.querySelector('.modal-content');
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+
+            // Animate modal content in
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            const content = modal.querySelector('.modal-content');
+
+            // Animate modal content out
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+
+            // After animation, hide modal
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }, 300); // should match transition duration
+        }
+    </script>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #020617;
+            color: #e2e8f0;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            width: 1px;
+            height: calc(100% + 1.5rem);
+            background-color: #334155;
+        }
+
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #1e293b;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #1e293b;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .bg-gray-50 {
+            background-color: #0f172a;
+        }
+
+        .bg-white {
+            background-color: #1e293b;
+        }
+
+        .text-gray-600 {
+            color: #94a3b8;
+        }
+
+        .text-gray-500 {
+            color: #64748b;
+        }
+
+        .text-gray-700 {
+            color: #e2e8f0;
+        }
+
+        .bg-gray-100 {
+            background-color: #334155;
+            color: #e2e8f0;
+        }
+
+        .bg-gray-200 {
+            background-color: #334155;
+            color: #e2e8f0;
+        }
+
+        .border-gray-300 {
+            border-color: #334155;
+        }
+
+        .bg-gray-800 {
+            background-color: #1e293b;
+        }
+    </style>
+</head>
+
+<body class="bg-darker">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-dark shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-secondary">Yussif<span
+                            class="text-primary">Ammar</span></a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-400 hover:text-primary">Home</a>
+                    <a href="#about" class="nav-link text-gray-400 hover:text-primary">About</a>
+                    <a href="#experience" class="nav-link text-gray-400 hover:text-primary">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-400 hover:text-primary">Projects</a>
+                    <a href="#skills" class="nav-link text-gray-400 hover:text-primary">Skills</a>
+                    <a href="#contact" class="nav-link text-gray-400 hover:text-primary">Contact</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button id="menuBtn" class="text-gray-400 hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark py-2 px-4 shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="nav-link text-gray-400 hover:text-primary">Home</a>
+                <a href="#about" class="nav-link text-gray-400 hover:text-primary">About</a>
+                <a href="#experience" class="nav-link text-gray-400 hover:text-primary">Experience</a>
+                <a href="#projects" class="nav-link text-gray-400 hover:text-primary">Projects</a>
+                <a href="#skills" class="nav-link text-gray-400 hover:text-primary">Skills</a>
+                <a href="#contact" class="nav-link text-gray-400 hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-4">Hi, I'm <span
+                            class="text-primary">Yussif H. Ammar</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-400 mb-6">AI & Machine Learning Specialist
+                    </h2>
+                    <p class="text-gray-400 mb-8 max-w-lg">Senior student at Benha University specializing in
+                        programming, data analysis, and AI. Committed to applying technology to solve real-world
+                        problems.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact"
+                            class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Contact
+                            Me</a>
+                        <a href="#projects"
+                            class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition duration-300">View
+                            Projects</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div
+                            class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-primary to-accent rounded-full overflow-hidden flex items-center justify-center floating">
+                            <div
+                                class="bg-gray-700 border-2 border-dashed border-gray-600 rounded-full w-60 h-60 md:w-72 md:h-72 flex items-center justify-center overflow-hidden">
+                                <img src="red.jpg" alt="Profile" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-secondary section-title">About Me</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Education</h3>
+                    <div class="bg-dark rounded-lg p-6 shadow-sm">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-graduation-cap text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-secondary">Benha University</h4>
+                                <p class="text-gray-400">Faculty of Computing and Artificial Intelligence</p>
+                                <p class="text-gray-500 text-sm">Sep. 2022 - Present</p>
+                                <p class="mt-2 text-gray-400">Senior student specializing in programming, data analysis,
+                                    and AI with hands-on experience in multiple projects.</p>
+                            </div>
+                        </div>
+                        <hr style="padding: 16px; border-color: #0f172a;">
+
+
+                        <div class="flex items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-laptop-code text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-secondary">NTI Training Program</h4>
+                                <p class="text-gray-400">National Telecommunication Institute</p>
+                                <p class="text-gray-500 text-sm">Jun. 2025 - Aug. 2025</p>
+                                <p class="mt-2 text-gray-400">
+                                    Completed a 72-hour intensive program with 60 hours of hands-on training in machine
+                                    learning tools and techniques,
+                                    and 12 hours of soft skills focused on freelancing, communication, and personal
+                                    branding.
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Personal Information</h3>
+                    <div class="bg-dark rounded-lg p-6 shadow-sm">
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">Email</p>
+                                    <a href="mailto:youssefammar390@gmail.com"
+                                        class="text-secondary hover:text-primary">
+                                        youssefammar390@gmail.com
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-phone text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">Phone</p>
+                                    <div class="flex items-center gap-4">
+                                        <a href="tel:+201022094203" class="text-secondary hover:text-primary">Call</a>
+                                        <span>/</span>
+                                        <a href="https://wa.me/201022094203" target="_blank"
+                                            class="text-secondary hover:text-primary">WhatsApp</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">Location</p>
+                                    <p class="text-secondary">Benha 13511, Egypt</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                    <i class="fab fa-linkedin-in text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">LinkedIn</p>
+                                    <a href="https://linkedin.com/in/yussifammar" target="_blank"
+                                        class="text-secondary hover:text-primary">linkedin.com/in/yussifammar</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                    <i class="fab fa-kaggle text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">Kaggle</p>
+                                    <a href="https://kaggle.com/yussifhatem" target="_blank"
+                                        class="text-secondary hover:text-primary">kaggle.com/yussifhatem</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                    <i class="fab fa-github text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">GitHub</p>
+                                    <a href="https://github.com/yussifammar" target="_blank"
+                                        class="text-secondary hover:text-primary">github.com/yussifammar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-secondary section-title">Work Experience</h2>
+
+            <div class="mt-8 space-y-8">
+                <!-- Experience 4 -->
+                <div class="timeline-item">
+                    <div class="bg-gray-800 rounded-lg shadow-sm p-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-secondary">MT Internship</h3>
+                            <span
+                                class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium mt-2 md:mt-0">Jun.
+                                2025 - Aug. 2025</span>
+                        </div>
+                        <p class="text-gray-400 font-medium mb-3">Modern Electronics, Maadi</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-400">
+                            <li>WorkeDeveloped and deployed IoT applications using the ESP32 microcontroller, focusing
+                                on real-time data collection and wireless communication.</li>
+                            <li>Gained hands-on experience with sensors, Wi-Fi/Bluetooth integration, and embedded C/C++
+                                programming for smart device control.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="bg-gray-800 rounded-lg shadow-sm p-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-secondary">Research Assistant</h3>
+                            <span
+                                class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium mt-2 md:mt-0">May
+                                2025 </span>
+                        </div>
+                        <!-- <p class="text-gray-400 font-medium mb-3"></p> -->
+                        <ul class="list-disc pl-5 space-y-2 text-gray-400">
+                            <li>Designed a reconstruction-based autoencoder to assess and enhance fundus image quality
+                                for reliable classification.</li>
+                            <li>Improved model interpretability and performance by integrating enhancement-driven
+                                feedback into the classification pipeline.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="bg-gray-800 rounded-lg shadow-sm p-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-secondary">Orange Intern</h3>
+                            <span
+                                class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium mt-2 md:mt-0">Jan.
+                                2025 - Feb. 2025</span>
+                        </div>
+                        <p class="text-gray-400 font-medium mb-3">Orange Digital Center, Cairo</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-400">
+                            <li>Worked on CNNs, NLP, MLOps, and Generative AI for real-world applications</li>
+                            <li>Gained hands-on experience in model development, optimization, and deployment</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="bg-gray-800 rounded-lg shadow-sm p-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-secondary">ECPC Qualification Contestant</h3>
+                            <span
+                                class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium mt-2 md:mt-0">Aug.
+                                2023</span>
+                        </div>
+                        <p class="text-gray-400 font-medium mb-3">Arab Academy for Science and Tech Campus, Alex</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-400">
+                            <li>Achieved 90th place in ECPC qualifications using problem-solving and programming skills
+                            </li>
+                            <li>Reduced problem-solving time by 25% compared to previous attempts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-secondary section-title">Projects</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-dark rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4" style="padding-top: 10px;">
+                            <h3 class="text-xl font-semibold text-secondary">Fischer</h3>
+                            <span class="bg-accent bg-opacity-10 text-accent px-2 py-1 rounded text-xs">Dec. 2024</span>
+                        </div>
+                        <p class="text-gray-400 mb-4" style="padding-top: 10px;">Robotic arm project designed to perform
+                            chess using computer
+                            vision and machine learning</p>
+                        <div class="mb-4" style="padding-top: 10px;">
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs mr-2">Python</span>
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs mr-2">C++</span>
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs">OpenCV</span>
+                        </div>
+
+                        <!-- More Details Button -->
+                        <div class="pt-4 flex justify-center" style="margin-top: 10%;">
+                            <button onclick="openModal('fischerModal')"
+                                class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                More Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 2 -->
+
+
+
+                <!-- Project Card -->
+                <div class="cursor-default project-card bg-dark rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4" style="padding-top: 10px;">
+                            <h3 class="text-xl font-semibold text-secondary">Butterflies Classifier</h3>
+                            <span class="bg-accent bg-opacity-10 text-accent px-2 py-1 rounded text-xs">Jun. 2025</span>
+                        </div>
+                        <p class="text-gray-400 mb-4" style="padding-top: 10px;">CNN model to classify 100 butterfly
+                            species</p>
+                        <div class="mb-4" style="padding-top: 10px;">
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs mr-2">PyTorch</span>
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs">EfficientNet</span>
+                        </div>
+
+                        <!-- 🔘 More Details Button -->
+                        <div class="pt-4 flex justify-center" style="margin-top: 16%;">
+                            <button onclick="openModal('butterflyModal')"
+                                class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                More Details
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Project 3 -->
+                <div onclick="openModal('flowerModal')"
+                    class="cursor-pointer project-card bg-dark rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4" style="padding-top: 10px;">
+                            <h3 class="text-xl font-semibold text-secondary">Flower Generator</h3>
+                            <span class="bg-accent bg-opacity-10 text-accent px-2 py-1 rounded text-xs">Apr. 2025</span>
+                        </div>
+                        <p class="text-gray-400 mb-4" style="padding-top: 10px;">Variational Autoencoder for flower
+                            image generation</p>
+                        <div class="mb-4" style="padding-top: 10px;">
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs mr-2">PyTorch</span>
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs">VAE</span>
+                        </div>
+                        <div class="pt-4 flex justify-center" style="margin-top: 16%;">
+                            <button onclick="event.stopPropagation(); openModal('flowerModal')"
+                                class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                More Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-dark rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4" style="padding-top: 10px;">
+                            <h3 class="text-xl font-semibold text-secondary">Jarvis</h3>
+                            <span class="bg-accent bg-opacity-10 text-accent px-2 py-1 rounded text-xs">Aug. 2024</span>
+                        </div>
+                        <p class="text-gray-400 mb-4" style="padding-top: 10px;">A simple virtual assistant project
+                            created with python and Sqlite3. It works with voice commands
+                        </p>
+                        <div class="mb-4" style="padding-top: 10px;">
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs mr-2">Python</span>
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs">Sqlite3</span>
+                        </div>
+
+                        <!-- More Details Button -->
+                        <div class="pt-4 flex justify-center" style="margin-top: 10%;">
+                            <button onclick="openModal('jarvisModal')"
+                                class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                More Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-dark rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4" style="padding-top: 10px;">
+                            <h3 class="text-xl font-semibold text-secondary">Home-made Matlab</h3>
+                            <span class="bg-accent bg-opacity-10 text-accent px-2 py-1 rounded text-xs">Oct. 2024</span>
+                        </div>
+                        <!-- <br> -->
+                        <p class="text-gray-400 mb-4" style="padding-top: 10px;">
+                            A basic MATLAB-style tool built from scratch to process grayscale TIFF images
+                        </p>
+                        <div class="mb-4" style="padding-top: 10px;">
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs mr-2">Python</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs">Image
+                                Processing</span>
+                        </div>
+
+                        <!-- More Details Button -->
+                        <div class="pt-4 flex justify-center" style="margin-top: 16.5%;">
+                            <button onclick="openModal('matlabModal')"
+                                class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                More Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card bg-dark rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4" style="padding-top: 10px;">
+                            <h3 class="text-xl font-semibold text-secondary">Zumba</h3>
+                            <span class="bg-accent bg-opacity-10 text-accent px-2 py-1 rounded text-xs">Feb. 2025</span>
+                        </div>
+                        <p class="text-gray-400 mb-4" style="padding-top: 10px;">An RC car controlled via a PS
+                            controller using Python, with Bluetooth linking the PC and Arduino for real-time
+                        </p>
+                        <div class="mb-4" style="padding-top: 10px;">
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs mr-2">Python</span>
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs mr-2">C++</span>
+                            <span
+                                class="inline-block bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs">Arduino</span>
+                        </div>
+
+                        <!-- More Details Button -->
+                        <div class="pt-4 flex justify-center" style="margin-top: 10%;">
+                            <button onclick="openModal('zumbaModal')"
+                                class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                More Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-secondary section-title">Technical Skills</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <!-- Languages -->
+                <div class="bg-gray-800 rounded-lg shadow-sm p-6">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Languages</h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-400">Python</span>
+                                <span class="text-gray-400">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-400">C++</span>
+                                <span class="text-gray-400">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress bg-secondary" style="width:90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-400">SQL</span>
+                                <span class="text-gray-400">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-400">Java</span>
+                                <span class="text-gray-400">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technologies -->
+                <div class="bg-gray-800 rounded-lg shadow-sm p-6">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Technologies & Frameworks</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-lg">TensorFlow</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-lg">PyTorch</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-lg">OpenCV</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-lg">Linux</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-lg">GitHub</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-lg">CNNs</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-lg">NLP</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-lg">MLOps</span>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-secondary mt-6 mb-4">Developer Tools</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-accent bg-opacity-10 text-accent px-3 py-2 rounded-lg">PyCharm</span>
+                        <span class="bg-accent bg-opacity-10 text-accent px-3 py-2 rounded-lg">VS Code</span>
+                        <span class="bg-accent bg-opacity-10 text-accent px-3 py-2 rounded-lg">MATLAB</span>
+                        <span class="bg-accent bg-opacity-10 text-accent px-3 py-2 rounded-lg">Arduino IDE</span>
+                        <span class="bg-accent bg-opacity-10 text-accent px-3 py-2 rounded-lg">Kaggle</span>
+                        <span class="bg-accent bg-opacity-10 text-accent px-3 py-2 rounded-lg">Google Colab</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extracurricular Activities -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-secondary section-title">Extracurricular Activities</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+                    <div class="bg-gray-800 rounded-lg shadow-sm p-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-user-tie text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-secondary">Secretary</h4>
+                                <p class="text-gray-400 font-medium">IEEE RAS Chapter</p>
+                                <p class="text-gray-500 text-sm">Jan. 2025 – Present</p>
+                                <p class="mt-2 text-gray-400">
+                                    Greeted VIP guests and speakers at technical events, handled formal communication,
+                                    and prepared detailed event reports. Supported attendee coordination and front-desk
+                                    operations throughout each session.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-gray-800 rounded-lg shadow-sm p-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-chalkboard-teacher text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-secondary">Trainer</h4>
+                                <p class="text-gray-400 font-medium">Plan International Egypt</p>
+                                <p class="text-gray-500 text-sm">Feb. 2020 - Jan. 2022</p>
+                                <p class="mt-2 text-gray-400">Trained young participants on effective communication
+                                    skills, achieving measurable improvements based on feedback surveys. Collaborated
+                                    with team members to design impactful training programs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-secondary section-title">Get In Touch</h2>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-400 mb-6">Feel free to reach out if you're looking for a dedicated AI and
+                        machine learning specialist, or if you have any questions about my work.</p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Email</p>
+                                <a href="mailto:youssefammar390@gmail.com" class="text-secondary hover:text-primary">
+                                    youssefammar390@gmail.com
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Contact</p>
+                                <div class="flex items-center gap-4">
+                                    <a href="tel:+201022094203" class="text-secondary hover:text-primary">Call</a>
+                                    <span>/</span>
+                                    <a href="https://wa.me/201022094203" target="_blank"
+                                        class="text-secondary hover:text-primary">WhatsApp</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fab fa-linkedin-in text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">LinkedIn</p>
+                                <a href="https://linkedin.com/in/yussifammar" target="_blank"
+                                    class="text-secondary hover:text-primary">linkedin.com/in/yussifammar</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fab fa-github text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">GitHub</p>
+                                <a href="https://github.com/yussifammar" target="_blank"
+                                    class="text-secondary hover:text-primary">github.com/yussifammar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <form action="https://formspree.io/f/xrbkdjka" method="POST"
+                        class="bg-dark rounded-lg p-6 shadow-sm">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-400 mb-2">Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-white">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-400 mb-2">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-white">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-400 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-white"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 w-full">
+                            Send Message
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-xl font-bold text-white">Yussif<span class="text-primary">Ammar</span></a>
+                    <p class="text-gray-500 mt-1">AI & Machine Learning Specialist</p>
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="mailto:youssefammar390@gmail.com" class="text-gray-500 hover:text-primary">
+                        <i class="fas fa-envelope text-lg"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yussifammar" target="_blank"
+                        class="text-gray-500 hover:text-primary">
+                        <i class="fab fa-linkedin-in text-lg"></i>
+                    </a>
+                    <a href="https://github.com/yussifammar" target="_blank" class="text-gray-500 hover:text-primary">
+                        <i class="fab fa-github text-lg"></i>
+                    </a>
+                    <a href="https://kaggle.com/yussifhatem" target="_blank" class="text-gray-500 hover:text-primary">
+                        <i class="fab fa-kaggle text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-gray-800 text-center">
+                <p class="text-gray-500">© 2025 Yussif H. Ammar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div id="butterflyModal" onclick="closeModal('butterflyModal')"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60 transition-opacity duration-300">
+
+        <!-- Stop click from closing when clicking inside content -->
+        <div onclick="event.stopPropagation()"
+            class="modal-content bg-dark rounded-lg max-w-3xl w-full mx-4 p-6 relative transform transition-all duration-500 scale-95 opacity-0">
+
+            <button onclick="closeModal('butterflyModal')"
+                class="absolute top-4 right-4 text-white hover:text-red-400 text-2xl">&times;</button>
+
+            <h2 class="text-2xl font-bold text-secondary mb-2">Butterflies Classifier</h2>
+            <p class="text-gray-400 mb-4">A deep learning CNN model designed to classify 100 different butterfly species
+                using transfer learning techniques.</p>
+
+            <img src="butterfly.jpg" alt="Butterfly Project Screenshot" class="w-full h-auto max-h-64 object-contain"
+                style="margin-bottom: 20px;">
+
+            <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm">
+                <li>Custom CNN model with 80% accuracy</li>
+                <li>EfficientNet (97%) and ResNet50 (96%) used via transfer learning</li>
+                <li>Model optimization with grid/random search for hyperparameters</li>
+                <li>Clean preprocessing pipeline with real-world deployment potential</li>
+            </ul>
+            <div class="pt-6 flex justify-center">
+                <a href="https://www.kaggle.com/code/yussifhatem/butterflies-classification-v2" target="_blank"
+                    class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    View Project
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!-- flower modal -->
+    <div id="flowerModal" onclick="closeModal('flowerModal')"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60 transition-opacity duration-300">
+
+        <div onclick="event.stopPropagation()"
+            class="bg-dark rounded-lg max-w-3xl w-full mx-4 p-6 relative transform transition-all duration-500 scale-95 opacity-0 modal-content">
+
+            <button onclick="closeModal('flowerModal')"
+                class="absolute top-4 right-4 text-white hover:text-red-400 text-2xl">&times;</button>
+
+            <h2 class="text-2xl font-bold text-secondary mb-2">Flower Generator</h2>
+            <p class="text-gray-400 mb-4">A Variational Autoencoder (VAE) trained to generate realistic flower images
+                using an 8-dimensional latent space.</p>
+
+            <img src="flower.jpg" alt="Flower Project Screenshot"
+                class="rounded-lg w-full h-auto max-h-64 object-contain" style="margin-bottom: 20px;">
+            <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm">
+                <li>Built a VAE architecture using TensorFlow/Keras</li>
+                <li>Encoded flower features into a compact latent representation</li>
+                <li>Used reconstruction + KL divergence loss for training</li>
+                <li>Generated new flower images from latent vectors</li>
+            </ul>
+
+            <div class="pt-6 flex justify-center">
+                <a href="https://www.kaggle.com/code/yussifhatem/flowers-vae" target="_blank"
+                    class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    View Project
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- matlab modal -->
+    <div id="matlabModal" onclick="closeModal('matlabModal')"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60 transition-opacity duration-300">
+
+        <div onclick="event.stopPropagation()"
+            class="modal-content bg-dark rounded-lg max-w-3xl w-full mx-4 p-6 relative transform transition-all duration-500 scale-95 opacity-0">
+
+            <button onclick="closeModal('matlabModal')"
+                class="absolute top-4 right-4 text-white hover:text-red-400 text-2xl">&times;</button>
+
+            <h2 class="text-2xl font-bold text-secondary mb-2">Home-made Matlab</h2>
+            <p class="text-gray-400 mb-4">A complete image processing system built from scratch to replicate core MATLAB
+                functionalities using Python.</p>
+
+            <img src="matlab.jpeg" alt="Home-made Matlab Screenshot" class="rounded-lg mb-4 w-full h-64 object-cover">
+
+            <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm">
+                <li>Implemented foundational algorithms for image loading, filtering, and transformation</li>
+                <li>Focused on TIFF file support and grayscale operations</li>
+                <li>Learned practical pixel-wise operations, histogram equalization, and filtering</li>
+            </ul>
+
+            <div class="pt-6 flex justify-center">
+                <a href="https://github.com/YussifAmmar/Python-ImageProcessing-Toolbox" target="_blank"
+                    class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    View Project
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- fischerModal -->
+    <div id="fischerModal" onclick="closeModal('fischerModal')"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60 transition-opacity duration-300">
+
+        <div onclick="event.stopPropagation()"
+            class="modal-content bg-dark rounded-lg max-w-3xl w-full mx-4 p-6 relative transform transition-all duration-500 scale-95 opacity-0">
+
+            <button onclick="closeModal('fischerModal')"
+                class="absolute top-4 right-4 text-white hover:text-red-400 text-2xl">&times;</button>
+
+            <h2 class="text-2xl font-bold text-secondary mb-2">Fischer</h2>
+            <p class="text-gray-400 mb-4">A robotic arm powered by computer vision and machine learning to play chess
+                autonomously by recognizing pieces and planning moves.</p>
+
+            <img src="imagerobo.png" alt="Fischer Project Screenshot" class="w-full h-auto max-h-64 object-contain"
+                style="margin-bottom: 20px;">
+
+            <!-- 🔽 Bullet List -->
+            <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm">
+                <li>Developed chess piece recognition model with 80%+ accuracy using YOLOv8</li>
+                <li>Implemented inverse kinematics for precise robotic arm movements</li>
+            </ul>
+
+            <div class="pt-6 flex justify-center">
+                <a href="https://github.com/YussifAmmar/fischer-robot-arm-kinematics" target="_blank"
+                    class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    View Project
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- jarvis modal -->
+    <div id="jarvisModal" onclick="closeModal('jarvisModal')"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60 transition-opacity duration-300">
+
+        <div onclick="event.stopPropagation()"
+            class="modal-content bg-dark rounded-lg max-w-3xl w-full mx-4 p-6 relative transform transition-all duration-500 scale-95 opacity-0">
+
+            <button onclick="closeModal('jarvisModal')"
+                class="absolute top-4 right-4 text-white hover:text-red-400 text-2xl">&times;</button>
+
+            <h2 class="text-2xl font-bold text-secondary mb-2">Jarvis</h2>
+            <p class="text-gray-400 mb-4">
+                A voice-controlled virtual assistant built using Python and SQLite3. Capable of performing tasks like
+                opening applications, answering questions, and saving user input in a lightweight database.
+            </p>
+
+            <img src="jarvis.jpg" alt="Jarvis Project Screenshot"
+                class="w-full h-auto max-h-64 object-contain rounded-lg" style="margin-bottom: 20px;">
+
+            <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm">
+                <li>Built using Python's speech recognition and text-to-speech libraries</li>
+                <li>Stored user responses and queries using SQLite3 database</li>
+                <li>It performs small but useful tasks such as taking screenshots, searching Wikipedia, and managing
+                    user access via a membership database.</li>
+            </ul>
+
+            <div class="pt-6 flex justify-center">
+                <a href="https://github.com/YussifAmmar/Jarvis_" target="_blank"
+                    class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    View Project
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- zumba Modal -->
+    <div id="zumbaModal" onclick="closeModal('zumbaModal')"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60 transition-opacity duration-300">
+
+        <div onclick="event.stopPropagation()"
+            class="modal-content bg-dark rounded-lg max-w-3xl w-full mx-4 p-6 relative transform transition-all duration-500 scale-95 opacity-0">
+
+            <button onclick="closeModal('zumbaModal')"
+                class="absolute top-4 right-4 text-white hover:text-red-400 text-2xl">&times;</button>
+
+            <h2 class="text-2xl font-bold text-secondary mb-2">Zumba</h2>
+            <p class="text-gray-400 mb-4">
+                A real-time RC car project controlled via PlayStation controller using Python. Bluetooth communication
+                connects the PC and Arduino for responsive steering, acceleration, and control handling.
+            </p>
+
+            <img src="zumba.jpg" alt="Zumba Project Screenshot" class="rounded-lg mb-4 w-full max-h-64 object-cover" />
+
+            <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm">
+                <li>Used PyGame to capture PlayStation controller input on PC</li>
+                <li>Transmitted commands to Arduino via Bluetooth for real-time control</li>
+                <li>Implemented C++ logic on Arduino for motor control and direction</li>
+            </ul>
+
+            <div class="pt-6 flex justify-center">
+                <a href="https://github.com/YussifAmmar/RC_CAR" target="_blank"
+                    class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    View Project
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+    <!-- <button onclick="scrollToTop()" id="scrollTopBtn"
+        class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 hidden z-50">
+        ↑
+    </button> -->
+
+    <button onclick="scrollToTop()" id="scrollTopBtn"
+        class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 text-xl flex items-center justify-center rounded-full shadow-lg hover:bg-blue-700 transition duration-300 hidden z-50">
+        <i class="fas fa-angle-double-up"></i>
+    </button>
+
+
+
+
+    <script>
+        // Show button when scrolling down
+        window.onscroll = function () {
+            const btn = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.classList.remove("hidden");
+            } else {
+                btn.classList.add("hidden");
+            }
+        };
+
+        // Scroll to top smoothly
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+
+</html>
