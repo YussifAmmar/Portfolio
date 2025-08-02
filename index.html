@@ -15,11 +15,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3b82f6',
-                        secondary: '#e2e8f0',
-                        accent: '#8b5cf6',
-                        dark: '#0f172a',
-                        darker: '#020617',
+                        primary: '#3b82f6',    // blue-500
+                        secondary: '#ffffff',  // white
+                        accent: '#8b5cf6',     // violet-500
+                        dark: '#1e293b',       // slate-800  
+                        darker: '#0f172a',     // slate-900
                     }
                 }
             }
@@ -85,7 +85,7 @@
             left: 0;
             width: 50%;
             height: 3px;
-            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            background: linear-gradient(to right, #3b82f6, #3b82f6);
             border-radius: 2px;
         }
 
@@ -103,7 +103,7 @@
     width: 20px; /* Slightly bigger circle */
     height: 20px;
     border-radius: 50%;
-    background-color: #3b82f6; /* Circle color */
+    background-color: #001233; /* Circle color */
     border: 3px solid #1e293b; /* Optional: adds a border */
     z-index: 2; /* Ensures circle stays above the line */
 }
@@ -223,70 +223,72 @@
     </style>
 </head>
 
-<body class="bg-darker">
+<body class="bg-[#0f172a]">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-dark shadow-md z-50">
+    <nav class="fixed w-full bg-[#1e293b] shadow-md z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="#" class="text-xl font-bold text-secondary">Yussif<span
-                            class="text-primary">Ammar</span></a>
+                    <a href="#" class="text-xl font-bold text-[#94a3b8]">Yussif<span
+                            class="text-[#3b82f6]">Ammar</span></a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-400 hover:text-primary">Home</a>
-                    <a href="#about" class="nav-link text-gray-400 hover:text-primary">About</a>
-                    <a href="#experience" class="nav-link text-gray-400 hover:text-primary">Experience</a>
-                    <a href="#projects" class="nav-link text-gray-400 hover:text-primary">Projects</a>
-                    <a href="#skills" class="nav-link text-gray-400 hover:text-primary">Skills</a>
-                    <a href="#contact" class="nav-link text-gray-400 hover:text-primary">Contact</a>
+                    <a href="#home" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Home</a>
+                    <a href="#about" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">About</a>
+                    <a href="#experience" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Experience</a>
+                    <a href="#projects" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Projects</a>
+                    <a href="#skills" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Skills</a>
+                    <a href="#contact" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Contact</a>
+                    <a href="https://drive.google.com/file/d/1ck2rKLgc4hKZpX8e8yLPmMeoaW6SRBDo/view?usp=sharing" target="_blank" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Resume</a>
                 </div>
                 <div class="flex items-center md:hidden">
-                    <button id="menuBtn" class="text-gray-400 hover:text-primary">
+                    <button id="menuBtn" class="text-[#94a3b8] hover:text-[#3b82f6]">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-dark py-2 px-4 shadow-lg">
+        <div id="mobileMenu" class="hidden md:hidden bg-[#1e293b] py-2 px-4 shadow-lg">
             <div class="flex flex-col space-y-3">
-                <a href="#home" class="nav-link text-gray-400 hover:text-primary">Home</a>
-                <a href="#about" class="nav-link text-gray-400 hover:text-primary">About</a>
-                <a href="#experience" class="nav-link text-gray-400 hover:text-primary">Experience</a>
-                <a href="#projects" class="nav-link text-gray-400 hover:text-primary">Projects</a>
-                <a href="#skills" class="nav-link text-gray-400 hover:text-primary">Skills</a>
-                <a href="#contact" class="nav-link text-gray-400 hover:text-primary">Contact</a>
+                <a href="#home" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Home</a>
+                <a href="#about" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">About</a>
+                <a href="#experience" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Experience</a>
+                <a href="#projects" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Projects</a>
+                <a href="#skills" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Skills</a>
+                <a href="#contact" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Contact</a>
+                <a href="https://drive.google.com/file/d/1ck2rKLgc4hKZpX8e8yLPmMeoaW6SRBDo/view?usp=sharing" target="_blank" class="nav-link text-[#94a3b8] hover:text-[#3b82f6]">Resume</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24">
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-[#0f172a]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-4">Hi, I'm <span
-                            class="text-primary">Yussif H. Ammar</span></h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-400 mb-6">AI & Machine Learning Specialist
+                    <h1 class="text-4xl md:text-5xl font-bold text-[#94a3b8] mb-4">Hi, I'm <span
+                            class="text-[#3b82f6]">Yussif H. Ammar</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-[#64748b] mb-6">AI & Machine Learning Specialist
                     </h2>
-                    <p class="text-gray-400 mb-8 max-w-lg">Senior student at Benha University specializing in
+                    <p class="text-[#94a3b8] mb-8 max-w-lg">Senior student at Benha University specializing in
                         programming, data analysis, and AI. Committed to applying technology to solve real-world
                         problems.</p>
                     <div class="flex space-x-4">
                         <a href="#contact"
-                            class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Contact
+                            class="bg-[#3b82f6] hover:bg-[#2563eb] text-white px-6 py-3 rounded-lg font-medium transition duration-300">Contact
                             Me</a>
                         <a href="#projects"
-                            class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition duration-300">View
+                            class="border-2 border-[#3b82f6] text-[#3b82f6] hover:bg-[#3b82f6] hover:text-white px-6 py-3 rounded-lg font-medium transition duration-300">View
                             Projects</a>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative">
                         <div
-                            class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-primary to-accent rounded-full overflow-hidden flex items-center justify-center floating">
+                            class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-[#3b82f6] to-[#8b5cf6] rounded-full overflow-hidden flex items-center justify-center floating">
                             <div
-                                class="bg-gray-700 border-2 border-dashed border-gray-600 rounded-full w-60 h-60 md:w-72 md:h-72 flex items-center justify-center overflow-hidden">
+                                class="bg-[#1e293b] border-2 border-dashed border-[#334155] rounded-full w-60 h-60 md:w-72 md:h-72 flex items-center justify-center overflow-hidden">
                                 <img src="pfp.jpeg" alt="Profile" class="w-full h-full object-cover">
                             </div>
                         </div>
@@ -430,6 +432,23 @@
             <h2 class="text-3xl font-bold text-secondary section-title">Work Experience</h2>
 
             <div class="mt-8 space-y-8">
+                <!-- Experience 5 -->
+                <div class="timeline-item">
+                    <div class="bg-gray-800 rounded-lg shadow-sm p-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-secondary">Freelancer Machine Learning Engineer</h3>
+                            <span
+                                class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium mt-2 md:mt-0">Jun. 2025 - Jan. 2026</span>
+                        </div>
+                        <p class="text-gray-400 font-medium mb-3">Microsoft Machine Learning Telecom Egypt Center, Nasr City</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-400">
+                            <li>Currently enrolled in Microsoft's ML curriculum, building a strong foundation in statistics, linear algebra, and Python for data science, while applying preprocessing and visualization techniques using NumPy, Pandas, Matplotlib, and Seaborn.</li>
+                            <li>Actively developing and evaluating machine learning models such as regression, decision trees, SVMs, and ensemble methods, and working with deep learning concepts including backpropagation, regularization, and transfer learning using TensorFlow.</li>
+                            <li>Enhancing soft skills through targeted training in freelancing strategies, communication, time management, and personal branding to effectively navigate professional environments and remote work opportunities.</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <!-- Experience 4 -->
                 <div class="timeline-item">
                     <div class="bg-gray-800 rounded-lg shadow-sm p-6">
@@ -717,7 +736,7 @@
                                 <span class="text-gray-400">90%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress bg-secondary" style="width:90%"></div>
+                                <div class="skill-progress" style="width:90%"></div>
                             </div>
                         </div>
 
@@ -1198,4 +1217,3 @@
 </body>
 
 </html>
-
